@@ -12,16 +12,20 @@
     "2faAPI": "node server/2faServer.js",
     "apiServer": "node server/2faServer.js",
     "postinstall": "node client/fix-tr46.js",
-    "dicebot": "node --max-old-space-size=800 --expose-gc client/baccaratMartingale_v8.0.js",
-    "dicebot:lowmem": "node --max-old-space-size=400 --expose-gc client/baccaratMartingale_v8.0.js",
+    "dicebot": "node --max-old-space-size=800 --expose-gc client/baccaratChopTie_v2.1.js",
+    "dicebot:lowmem": "node --max-old-space-size=400 --expose-gc client/baccaratChopTie_v2.1.js",
+    "checkCookie": "node client/checkCookie.js",
+    "checkCookie:debug": "node --inspect client/checkCookie.js",
     "start": "npm run client",
     "restart:client": "pkill -f 'node client/index.js' && sleep 3 && npm run client",
-    "status": "ps aux | grep -E 'node (client/index.js|client/baccaratMartingale)' | grep -v grep"
+    "status": "ps aux | grep -E 'node (client/index.js|client/baccaratChopTie)' | grep -v grep"
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "discord.js": "^14.17.3",
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
+    "got": "^14.4.5",
     "https-proxy-agent": "^7.0.5",
     "javascript-obfuscator": "^4.1.1",
     "moment": "^2.30.1",
@@ -33,10 +37,10 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "tr46": "^5.0.0",
+    "tronweb": "^6.0.0",
     "upgrade": "^1.1.0",
     "uuid": "^11.0.3",
     "whatwg-url": "^14.0.0",
-    "tronweb": "^6.0.0",
-    "ws": "^8.18.0" 
+    "ws": "^8.18.0"
   }
 }
